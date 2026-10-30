@@ -1,0 +1,65 @@
+[
+  {
+    "Id": "f3887e05-af5b-47a6-be76-422b235f3b6a",
+    "MedicineId": "d3524f6e-2f55-4df1-ac22-93363875bee9",
+    "MedicineName": "Paracetamol 500mg",
+    "QuantitySold": 50,
+    "UnitPrice": 25.50,
+    "TotalAmount": 1275.00,
+    "SoldAt": "2026-10-30T06:04:13.7211997Z"
+  },
+  {
+    "Id": "b0a41226-3b1a-4683-9c6b-11979b038b54",
+    "MedicineId": "437915f4-a8c3-4b27-9bad-c5ec90b8e854",
+    "MedicineName": "test med",
+    "QuantitySold": 20,
+    "UnitPrice": 260,
+    "TotalAmount": 5200,
+    "SoldAt": "2026-10-30T06:12:54.7935295Z"
+  },
+  {
+    "Id": "433a9c63-5899-4e0a-833a-5fd748a71053",
+    "MedicineId": "dfd7d742-9054-4e03-a28a-4d0798c0d821",
+    "MedicineName": "test med2",
+    "QuantitySold": 1,
+    "UnitPrice": 21,
+    "TotalAmount": 21,
+    "SoldAt": "2026-10-30T06:40:07.3131933Z"
+  },
+  {
+    "Id": "3a9f87b6-12ca-442d-89fa-388f58083e2a",
+    "MedicineId": "13dbdecb-8eea-474f-a8c5-81ec880331b5",
+    "MedicineName": "folilex",
+    "QuantitySold": 2,
+    "UnitPrice": 456,
+    "TotalAmount": 912,
+    "SoldAt": "2026-10-30T06:41:43.6722241Z"
+  },
+  {
+    "Id": "ea5458b0-2b27-4331-ba94-936b3a9f39e3",
+    "MedicineId": "821f72ef-676c-488a-b084-841bd124ce83",
+    "MedicineName": "test med2",
+    "QuantitySold": 2,
+    "UnitPrice": 260,
+    "TotalAmount": 520,
+    "SoldAt": "2026-10-30T06:50:02.4605617Z"
+  },
+  {
+    "Id": "889b0d0f-9851-4719-8414-b1d0cf5dcb25",
+    "MedicineId": "13dbdecb-8eea-474f-a8c5-81ec880331b5",
+    "MedicineName": "folilex",
+    "QuantitySold": 50,
+    "UnitPrice": 456,
+    "TotalAmount": 22800,
+    "SoldAt": "2026-10-30T06:50:36.7634725Z"
+  },
+  {
+    "Id": "17a007c4-37c6-4e2e-b16c-3800d4ac49bb",
+    "MedicineId": "821f72ef-676c-488a-b084-841bd124ce83",
+    "MedicineName": "test med2",
+    "QuantitySold": 2,
+    "UnitPrice": 260,
+    "TotalAmount": 520,
+    "SoldAt": "2026-10-30T06:51:39.5531876Z"
+  }
+]

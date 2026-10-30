@@ -1,0 +1,47 @@
+[
+  {
+    "Id": "d3524f6e-2f55-4df1-ac22-93363875bee9",
+    "FullName": "Paracetamol 500mg",
+    "Notes": "Keep in a cool and dry place",
+    "ExpiryDate": "2027-12-31",
+    "Quantity": 0,
+    "Price": 25.50,
+    "Brand": "ABC Pharma"
+  },
+  {
+    "Id": "437915f4-a8c3-4b27-9bad-c5ec90b8e854",
+    "FullName": "test med",
+    "Notes": "this is test medicine",
+    "ExpiryDate": "2026-10-09",
+    "Quantity": 0,
+    "Price": 260,
+    "Brand": "testbrand"
+  },
+  {
+    "Id": "dfd7d742-9054-4e03-a28a-4d0798c0d821",
+    "FullName": "test med2",
+    "Notes": "",
+    "ExpiryDate": "2026-10-09",
+    "Quantity": 0,
+    "Price": 21,
+    "Brand": "testbrand2"
+  },
+  {
+    "Id": "13dbdecb-8eea-474f-a8c5-81ec880331b5",
+    "FullName": "folilex",
+    "Notes": "",
+    "ExpiryDate": "2026-11-04",
+    "Quantity": 0,
+    "Price": 456,
+    "Brand": "foli1"
+  },
+  {
+    "Id": "821f72ef-676c-488a-b084-841bd124ce83",
+    "FullName": "test med2",
+    "Notes": "",
+    "ExpiryDate": "2030-07-07",
+    "Quantity": 6,
+    "Price": 260,
+    "Brand": "testbrand"
+  }
+]

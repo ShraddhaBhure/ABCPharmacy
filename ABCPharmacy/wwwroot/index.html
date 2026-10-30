@@ -1,0 +1,273 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Pharmacy </title>
+    <link rel="icon" type="image/png" href="/pharmacylogo.png">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="/" class="brand">
+            <div class="brand-logo">
+                <span>+</span>
+            </div>
+            <div>
+                <h1>ABC Pharmacy</h1>
+                <p>Medicine Inventory Management</p>
+            </div>
+        </a>
+
+        <nav class="navigation">
+            <button class="nav-button active" data-view="inventory-view">
+                <span>▦</span> Inventory
+            </button>
+            <button class="nav-button" data-view="sales-view">
+                <span>↗</span> Sales Records
+            </button>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- INVENTORY SCREEN -->
+        <section id="inventory-view" class="page">
+
+            <div class="page-header">
+                <div>
+                    <span class="eyebrow">PHARMACY MANAGEMENT</span>
+                    <h2>Medicine Inventory</h2>
+                    <p>View, search and manage available medicines.</p>
+                </div>
+
+                <button type="button" id="show-add-form" class="btn btn-primary">
+                    + Add Medicine
+                </button>
+            </div>
+
+            <div id="inventory-message" class="message" role="status"></div>
+
+            <!-- ADD MEDICINE FORM -->
+            <section id="medicine-form-container" class="panel hidden">
+                <div class="panel-header">
+                    <div>
+                        <h3>Add New Medicine</h3>
+                        <p>Enter all required medicine information.</p>
+                    </div>
+                    <button type="button" id="close-add-form"
+                            class="close-button" aria-label="Close">
+                        ×
+                    </button>
+                </div>
+
+                <form id="medicine-form">
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="fullName">Medicine Full Name *</label>
+                            <input type="text" id="fullName" name="fullName"
+                                   maxlength="150" placeholder="e.g. Paracetamol 500mg"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="brand">Brand *</label>
+                            <input type="text" id="brand" name="brand"
+                                   maxlength="100" placeholder="Enter brand"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date *</label>
+                            <input type="date" id="expiryDate" name="expiryDate"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="quantity">Quantity *</label>
+                            <input type="number" id="quantity" name="quantity"
+                                   min="0" step="1" placeholder="Enter quantity"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="price">Price (₹) *</label>
+                            <input type="number" id="price" name="price"
+                                   min="0" step="0.01" placeholder="0.00"
+                                   required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="notes">Notes</label>
+                            <textarea id="notes" name="notes" rows="3"
+                                      placeholder="Additional information (optional)"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="cancel-add"
+                                class="btn btn-secondary">
+                            Cancel
+                        </button>
+                        <button type="submit" id="save-medicine"
+                                class="btn btn-primary">
+                            Save Medicine
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- SEARCH -->
+            <div class="toolbar">
+                <div class="search-wrapper">
+                    <span>⌕</span>
+                    <input type="search" id="search"
+                           placeholder="Search medicine by name..."
+                           aria-label="Search medicine by name">
+                </div>
+                <span id="medicine-count" class="count-label">0 medicines</span>
+            </div>
+
+            <!-- COLOR LEGEND -->
+            <div class="legend">
+                <span><i class="dot red"></i> Expires in less than 30 days</span>
+                <span><i class="dot yellow"></i> Stock below 10</span>
+            </div>
+
+            <!-- MEDICINE TABLE -->
+            <section class="panel table-panel">
+                <div class="panel-header">
+                    <div>
+                        <h3>Available Medicines</h3>
+                        <p>Medicine inventory and stock details</p>
+                    </div>
+                    <span class="panel-icon">▦</span>
+                </div>
+
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>MEDICINE</th>
+                                <th>BRAND</th>
+                                <th>EXPIRY DATE</th>
+                                <th>QUANTITY</th>
+                                <th>PRICE</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="medicine-rows">
+                            <tr>
+                                <td colspan="6" class="empty-state">
+                                    Loading medicines...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </section>
+
+        <!-- SALES SCREEN -->
+        <section id="sales-view" class="page hidden">
+
+            <div class="page-header">
+                <div>
+                    <span class="eyebrow">PHARMACY MANAGEMENT</span>
+                    <h2>Sales Records</h2>
+                    <p>Record medicine sales and automatically update inventory.</p>
+                </div>
+            </div>
+
+            <div id="sales-message" class="message" role="status"></div>
+
+            <!-- RECORD SALE FORM -->
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h3>Record a Medicine Sale</h3>
+                        <p>Select a medicine and enter the quantity sold.</p>
+                    </div>
+                    <span class="panel-icon">₹</span>
+                </div>
+
+                <form id="sale-form">
+                    <div class="sale-grid">
+
+                        <div class="form-group">
+                            <label for="sale-medicine">Medicine *</label>
+                            <select id="sale-medicine" required>
+                                <option value="">Select medicine</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sale-quantity">Quantity Sold *</label>
+                            <input type="number" id="sale-quantity"
+                                   min="1" step="1"
+                                   placeholder="Enter quantity" required>
+                            <small id="available-stock"></small>
+                        </div>
+
+                        <div class="sale-action">
+                            <button type="submit" id="record-sale"
+                                    class="btn btn-primary">
+                                Record Sale
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </section>
+
+            <!-- SALES HISTORY -->
+            <section class="panel table-panel sales-history">
+                <div class="panel-header">
+                    <div>
+                        <h3>Sales History</h3>
+                        <p>Previously recorded medicine sales</p>
+                    </div>
+                    <span class="panel-icon">↗</span>
+                </div>
+
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>DATE / TIME</th>
+                                <th>MEDICINE</th>
+                                <th>QUANTITY</th>
+                                <th>UNIT PRICE</th>
+                                <th>TOTAL AMOUNT</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sales-rows">
+                            <tr>
+                                <td colspan="5" class="empty-state">
+                                    Loading sales records...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </section>
+
+        <footer class="footer">
+            <div class="footer-brand">
+                <span>✚</span> ABC Pharmacy
+            </div>
+            <p>Medicine Inventory &amp; Sales Management</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
