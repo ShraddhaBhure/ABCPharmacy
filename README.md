@@ -10,7 +10,8 @@ The application is developed using **ASP.NET Core Web API (.NET 8)**, **HTML5**,
 
 <!-- Add your project screenshots here -->
 
-![ABC Pharmacy - Medicine Inventory](Screenshots/Inventory.png)
+![ABC Pharmacy - Medicine Inventory](/farmacyimages/abcinventory.png
+)
 
 ![ABC Pharmacy - Sales Records](Screenshots/SalesRecords.png)
 
